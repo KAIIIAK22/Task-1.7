@@ -5,28 +5,24 @@ using namespace std;
 int main()
 {
     cout<<"Tree size: ";
-    int a;
-    cin >>a;
-    for (int i=a; i>0;i--)
-    {
-    for (int b=0; b<i;b++)
-    {
-        cout<<" ";
+    int size;
+    int pad;
+    cin >> size;
+    pad = size-1;
+
+    for (int i = 1; i < size*2; i+=2) {
+        for (int j = 0; j < pad; ++j) {
+            cout << ' ';
+        }
+        for (int j = 0; j < i; ++j) {
+            cout << '*';
+        }
+        pad--;
+
+        cout << endl;
     }
-    for (int c=i; c<=a;c++)
-    {
-        cout<<"*";
-    }
-    for (int c=i+1; c<=a;c++)
-    {
-        cout<<"*";
-    }
-    cout<<endl;
-    }
-    for (int b=a; b>0;b--)
-    {
-        cout<<" ";
-    }
-    cout<<"*";
+
+    for (int k = 0; k < size-1; ++k) cout << ' ';
+    cout << '*' << endl;
     return 0;
 }
